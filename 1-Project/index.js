@@ -4,19 +4,43 @@ const output = document.getElementById('output');
 
 button.addEventListener('click', () => {
   const inputvalue = input.value;
-  const newdiv = document.createElement('div');
-  const deletediv = document.createElement('button');
+  if (inputvalue === '') {
+    alert('Enter Some Text');
+    return;
+  }
 
+  const newdiv = document.createElement('div');
+  const main = document.createElement('div');
+  const deletediv = document.createElement('button');
+  const checkbox = document.createElement('input');
+  const outputText = document.createElement('div');
+
+  checkbox.type = 'checkbox';
+  checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+      outputText.style.textDecoration = 'line-through';
+    } else {
+      outputText.style.textDecoration = 'none';
+    }
+  });
   newdiv.className = 'newdiv';
-  newdiv.textContent = `${inputvalue}`;
+  main.className = 'mainbox';
+
+  outputText.textContent = `${inputvalue}`;
 
   deletediv.className = 'deletediv';
   deletediv.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
-
-  newdiv.appendChild(deletediv);
   deletediv.addEventListener('click', function () {
     output.removeChild(newdiv);
+    output.removeChild(main);
   });
 
-  output.appendChild(newdiv, deletediv);
+  main.appendChild(checkbox);
+  main.appendChild(outputText);
+  newdiv.appendChild(main);
+  newdiv.appendChild(deletediv);
+
+  output.appendChild(newdiv);
+
+  input.value = '';
 });

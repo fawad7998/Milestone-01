@@ -71,18 +71,24 @@ button:active {
 }
 
 /* input end */
-
+/* #output {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
 .newdiv {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
   font-size: 20px;
   font-weight: bold;
-  padding: 3px 23px;
 }
-
+.mainbox {
+  display: flex;
+  gap: 12px;
+}
 .deletediv {
-  margin-left: 10px;
   border: none;
   background-color: transparent;
 }
