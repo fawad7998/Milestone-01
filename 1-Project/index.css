@@ -70,6 +70,8 @@ button:active {
   padding: 24px 46px 24px 26px;
 }
 
+/* input end */
+
 .newdiv {
   display: flex;
   justify-content: space-between;
@@ -78,9 +80,13 @@ button:active {
   font-weight: bold;
   padding: 3px 23px;
 }
+
 .deletediv {
-  font-size: 20px;
-  font-weight: bold;
-  /* padding: 3px 23px; */
+  margin-left: 10px;
+  border: none;
+  background-color: transparent;
 }
-/* input end */
+
+.deletediv .fa-trash :hover {
+  background-color: gray;
+}

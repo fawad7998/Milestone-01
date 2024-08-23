@@ -5,13 +5,14 @@ const output = document.getElementById('output');
 button.addEventListener('click', () => {
   const inputvalue = input.value;
   const newdiv = document.createElement('div');
-  const deletediv = document.createElement('div');
+  const deletediv = document.createElement('button');
 
   newdiv.className = 'newdiv';
   newdiv.textContent = `${inputvalue}`;
 
   deletediv.className = 'deletediv';
-  deletediv.textContent = `delete`;
+  deletediv.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
+
   newdiv.appendChild(deletediv);
   deletediv.addEventListener('click', function () {
     output.removeChild(newdiv);
